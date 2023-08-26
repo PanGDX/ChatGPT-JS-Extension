@@ -1,0 +1,22 @@
+{
+  "manifest_version": 2,
+  "name": "ChatGPT Auto Button",
+  "version": "1.0",
+  "description": "Automatically presses the ChatGPT next and error buttons. Useful for people doing mass commands",
+  "icons": {
+      "48": "icon/icon.jpg"
+  },
+  "browser_action": {
+      "default_icon": {
+          "48": "icon/icon.jpg"
+      },
+      "default_popup": "popup.html"
+  },
+  "permissions": ["activeTab", "webRequest", "<all_urls>", "storage", "tabs"],
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["scripts/autobutton.js"]
+    }
+  ]
+}
